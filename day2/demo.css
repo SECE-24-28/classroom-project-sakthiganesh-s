@@ -1,0 +1,100 @@
+.one{
+    color: rgb(229, 255, 0);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 8px;
+    background-color: black;
+}
+
+h1{
+    color: blue;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid #000;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.des{
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #fffcfc;
+    border-radius: 5px;
+    background-color: #ff2600d5;
+}
+mark{
+    background-color: rgb(55, 51, 37);
+    color: black;
+    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+iframe{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 3px solid #000;
+    border-radius: 8px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+table{
+    width: 80%;
+    margin: 20px auto;
+    border = 2px solid #000;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+h4{
+    color: green;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Verdana', sans-serif;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 8px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+.dept{
+    color: rgb(218, 198, 160);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Tahoma', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 6px;
+    background-color: #333;
+    border: 1px solid #666;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
