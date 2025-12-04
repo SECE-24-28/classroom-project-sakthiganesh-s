@@ -1,0 +1,102 @@
+    input[type="button"] {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 10px 20px; 
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        height: 60px;
+        width: 150px;
+        border-radius: 20px;
+        transition: background-color 0.3s ease;
+    }
+    input[type="button"]:hover {
+        opacity: 0.6;
+    }
+    .box {
+        width: 300px;
+        height: 200px;
+        border: 2px solid black;    
+        margin-top: 50px;
+        margin-left: 100px;
+        h1{
+            position:absolute;
+            top:60px;
+            left:110px;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        h2{
+            position:relative;
+            top:60px;
+            left:90px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
+    .stick{
+        h1{
+            position:sticky;
+            color:blue
+        }
+        position: sticky;
+        background-color: yellow;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        border: 2px solid black;
+    }
+    .block1{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border: 2px solid black;
+        display: inline-block;
+        position: relative;
+        top: 60px;
+        left: 40px;
+        z-index: index 1;
+    }
+    .block2{
+        width: 100px;
+        height: 100px;
+        position: relative;
+        background-color: yellow;
+        border: 2px solid black;
+        display: inline-block;
+        z-index: index 2;
+    }
+    .block3{
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        border: 2px solid black;
+        display: inline-block;
+    }
+    .overflow{
+        width: 300px;
+        height: 150px;
+        border: 2px solid black;
+        overflow: scroll;
+    }
+    .flexbox1{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        .image1, .image2, .image3, .image4, .image5, .image6 {
+            width: 200px;
+            height: 150px;
+            border: 2px solid black;
+        }
+    }
+    .flexbox2{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .image1, .image2, .image3, .image4, .image6 {
+            width: 200px;
+            height: 150px;
+            border: 2px solid black;
+        }
+    }

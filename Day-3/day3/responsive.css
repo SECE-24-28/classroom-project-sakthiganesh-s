@@ -1,0 +1,16 @@
+input[type="button"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    background-color: #ff0000;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    cursor: pointer;
+}  
+  
+input[type="button"]:hover {
+    background-color: #2ccc00;
+}
