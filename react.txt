@@ -1,0 +1,261 @@
+Increment, decrement:
+=====================
+import { useState } from "react"
+
+function App() {
+  const [count, setCount] = useState(5);
+  return (
+    <>
+      <h1>WELCOME {count}</h1>
+      <button onClick = {() => {setCount(count + 1)}}>+</button>
+      <button onClick = {() => {setCount(count - 1)}}>-</button>
+    </>
+  )
+}
+
+export default App
+_______________________________________________________________
+
+Text Color Changing:
+====================
+import { useState } from "react"
+
+function App() {
+  const [color, setColor] = useState("black");
+  return (
+    <>
+      <h1 style = {{color}}>Color: {color}</h1>
+      <button onClick = {() => {setColor("red")}}>Red</button>
+      <button onClick = {() => {setColor("green")}}>Green</button>
+      <button onClick = {() => {setColor("blue")}}>Blue</button>
+    </>
+  )
+}
+
+export default App
+_______________________________________________________________
+
+Toggle:
+import { useState } from "react"
+
+function App() {
+  const [isOn, setIsOn] = useState(false);
+  return (
+    <>
+      <h1>{isOn ? "ON" : "OFF"}</h1>
+      <button onClick = {() => {setIsOn(!isOn)}}>Toggle</button>
+    </>
+  )
+}
+
+export default App
+_______________________________________________________________
+
+Array Manipulation:
+===================
+
+import { useState } from "react"
+
+function App() {
+  const [a, setA] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 0]);
+  return (
+    <>
+      <h1>{a}</h1>
+      <button onClick = {() => setA(a.length)}>Length</button>
+    </>
+  )
+}
+
+export default App
+_______________________________________________________________
+
+function App() {
+  const productList = ["fruit", "vegs", "milk"];
+  return (
+    <>
+    <h1>Product List: </h1>
+    {
+      productList.map((s, i) => (<p key = {i}>{s}</p>))
+    }
+    </>
+  )
+}
+export default App
+_______________________________________________________________
+
+Object Manipulation:
+====================
+import { useState } from "react"
+
+function App() {
+  const [a, setA] = useState({name: "AI"});
+  return (
+    <>
+      <h1>Name: {a.name}</h1>
+      <button onClick = {() => setA({name: "React"})}>Click</button>
+    </>
+  )
+}
+
+export default App
+_______________________________________________________________
+
+Likes-Dislikes:
+===============
+
+import { useState } from "react"
+
+function App() {
+  const [like, setLike] = useState(0);
+  const [dislike, setDislike] = useState(0);
+  return (
+    <>
+      <h1>Likes: {like}</h1>
+      <h1>Dislikes: {dislike}</h1>
+      <button onClick = {() => setLike(like + 1)}>Like</button>
+      <button onClick = {() => setDislike(dislike + 1)}>Dislike</button>
+    </>
+  )
+}
+
+export default App
+_______________________________________________________________
+
+Input From User:
+================
+import { useState } from "react"
+
+function App() {
+  const [name, setName] = useState();
+  return (
+    <>
+    <input type = "text" placeholder = "Enter your name" onChange = {(e) => {setName(e.target.value)}}/>
+    <p>Name: {name}</p>
+    </>
+  )
+}
+export default App
+_______________________________________________________________
+
+import { useState } from "react"
+
+function App() {
+  const [name, setName] = useState();
+  const [afterName, setAfterName] = useState();
+  const handleName = (e) => {setName(e.target.value);}
+  const handleSubmit = (e) => {e.preventDefault();setAfterName(name);}
+  return (
+    <>
+    <form onSubmit = {handleSubmit}>
+      <input type = "text" placeholder = "Enter your name" onChange = {handleName}/>
+      <button type = "submit">Submit</button>
+      <p>{afterName}</p>
+    </form>
+    </>
+  )
+}
+export default App
+_______________________________________________________________
+
+useRef:
+=======
+import { useRef, useState } from "react"
+
+
+function App() {
+  const [name, setName] = useState();
+  const inref = useRef();
+  const handleClick = (e) => { e.preventDefault(); setName(inref.current.value);}
+  return (
+    <>
+    <form>
+      <input type = "text" placeholder = "Enter name" ref = {inref} />
+      <button type = "submit" onClick = {handleClick}>Submit</button>
+    </form>        
+    <p>{name}</p>
+    </>
+  )
+}
+export default App
+_______________________________________________________________
+
+import { useRef, useState } from "react"
+
+
+function App() {
+  const [roll, setRoll] = useState();
+  const [name, setName] = useState();
+  const [mark, setMark] = useState();
+  const rollref = useRef();
+  const nameref = useRef();
+  const markref = useRef();
+  const handleClick = (e) => { e.preventDefault(); setRoll(rollref.current.value);setName(nameref.current.value);setMark(markref.current.value);}
+  return (
+    <>
+    <form>
+      Roll Number: <input type = "text" placeholder = "Enter roll number" ref = {rollref} /><br/>
+      Name: <input type = "text" placeholder = "Enter name" ref = {nameref} /><br/>
+      Mark: <input type = "number" placeholder = "Enter mark" ref = {markref} /><br/>
+      <button type = "submit" onClick = {handleClick}>Submit</button>
+    </form>
+    <p>Roll: {roll}</p>        
+    <p>Name: {name}</p>
+    <p>Mark: {mark}</p>
+    </>
+  )
+}
+export default App
+_______________________________________________________________
+
+import { useEffect, useState } from "react"
+
+function App() {
+  const [data, setData] = useState([])
+  const [type, setType] = useState("photos");
+  useEffect(()=>{console.log('Redering'); 
+      fetch(`https://jsonplaceholder.typicode.com/${type}`)
+      .then(response => response.json())
+      .then(json => setData(json))})
+  
+  return (
+    <>
+    <p>Type: {type}</p>
+    <button type = "submit" onClick ={() => {setType("albums")}}>Albums</button>
+    <button type = "submit" onClick ={() => {setType("photos")}}>Photos</button>
+    {
+      data.map((item, index) => (<p key = {index}>{item.title}</p>))
+    }
+    </>
+  )
+}
+export default App
+_______________________________________________________________
+
+import { useState } from "react"
+
+function App() {
+  const [name, setName] = useState("");
+
+  const handleSave = () => {
+    const user = { name: name, role: "student" };
+    localStorage.setItem("user", JSON.stringify(user));
+  };
+
+  const savedUser = JSON.parse(localStorage.getItem("user") || "{}");
+
+  return (
+    <>
+      <input
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <button onClick={handleSave}>Save</button>
+      <p>Name: {savedUser.name}</p>
+    </>
+  );
+}
+
+export default App;
+_______________________________________________________________
+
